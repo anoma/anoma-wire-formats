@@ -1,0 +1,35 @@
+;; 325792 bytes (318~ KB) + 316432 * num * 4 bytes
+partial-transaction ::= <actions> <inputs> <outputs>
+
+;; 316440 bytes + 316432 * num * 2 bytes
+inputs  ::= <verying-info-set> <verying-info-set>
+outputs ::= <verying-info-set> <verying-info-set>
+
+;; 9352 bytes
+actions ::= <action-verifying-info> <action-verifying-info>
+
+;; 4676 bytes
+action-verifying-info ::= <proof> <action-instance>
+
+action-instance ::= <anchor> <nf> <cm> <cv-net> <input-info> <output-info>
+
+anchor ::= <pallas>
+nf     ::= <pallas>
+cm     ::= <pallas>
+cv-net ::= <pallas>
+input-info  ::= <length> <byte>*
+output-info ::= <length> <byte>*
+
+
+;; 158220 bytes +
+
+158216 * num bytes
+verying-info-set ::= <verifying-info> <length> <verifying-info>*
+
+;; 158216 bytes
+verifying-info ::= <veryifying-key> <proof> <public-inputs>
+
+;; 1088 bytes
+public-inputs ::= Array(34, <pallas>)
+
+verifying-key ::= ommited
