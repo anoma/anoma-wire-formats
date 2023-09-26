@@ -1,0 +1,13 @@
+;; 32 bytes + n bytes
+proof ::= <length> <byte>*
+
+pallas ::= <u256>
+
+length ::= <u32>
+
+u256 ::= <u128> <u128>
+u128 ::= <u64> <u64>
+u64  ::= <u32> <u32>
+u32  ::= <u16> <u16>
+u16  ::= <byte> <byte>
+byte ::= 0 | ... | 255
