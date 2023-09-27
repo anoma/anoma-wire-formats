@@ -1,0 +1,11 @@
+;; logic_cmtmnt and value_cmtmnt (see resource.bnf) are unique, up to hash collision, 
+;; identifiers for program field elements. 
+;; using the commitments as keys, we can retrieve logics and values from, e.g. a key value storage.
+
+logic ::= <program-field-element>
+
+value ::= <program-field-element>
+
+;; element of a variable size field
+;; 4 bytes + n bytes
+program-field-element ::= <length> <byte>*

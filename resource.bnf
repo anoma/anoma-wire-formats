@@ -1,6 +1,7 @@
 ;; basic types (u256, byte, length) are defined in common.bnf
 
-;; all fields without _cmtmnt (commitment) are non-lossy encodings of a pre-image into a finite field 
+;; all fields without _cmtmnt are non-lossy encodings of a pre-image into a finite field
+;; logic_cmtmnt and value_cmtmnt are commitments to program-field-elements (see data-storage.bnf)
 ;; 224 bytes
 resource ::= <logic-cmtmnt> <label> <quantity> <value-cmtmnt> <nonce> <nc> <ephemeral>
 
@@ -20,12 +21,3 @@ ephemeral ::= <finite-field-element>
 
 ;; 32 bytes
 finite-field-element ::= <u256>
-
-;; logic and value commitments are unique (up to hash collision) identifiers for program field elements
-logic ::= <program-field-element>
-
-value ::= <program-field-element>
-
-;; element of a variable size field
-;; 4 bytes + n bytes
-program-field-element ::= <length> <byte>*
