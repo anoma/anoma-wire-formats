@@ -18,6 +18,3 @@ nonce ::= <finite-field-element>
 nc ::= <finite-field-element>
 
 ephemeral ::= <finite-field-element>
-
-;; 32 bytes
-finite-field-element ::= <u256>

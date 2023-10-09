@@ -1,10 +1,18 @@
-;; logic_cmtmnt and value_cmtmnt (see transparent-resource.bnf) are unique, up to hash collision, 
-;; identifiers for program field elements. 
-;; using the commitments as keys, we can retrieve logics and values from, e.g. a key value storage.
+;; logic_cmtmnt, value_cmtmnt (see transparent-resource.bnf) and executable_cmtmnt (see transparent-partial-transaction.bnf)
+;; are unique, up to hash collision, identifiers for program field elements. 
+;; Using the commitments as keys, we can retrieve the objects from, e.g. a key value storage.
 
 logic ::= <program-field-element>
 
 value ::= <program-field-element>
+
+executable ::= <program-field-element>
+
+bytestring-map ::= <length> <indexed-bytestring>*
+indexed-bytestring ::= <finite-field-element> <bytestring> (see common.bnf)
+
+;; 32 bytes
+finite-field-element ::= <u256>
 
 ;; element of a variable size field
 ;; 4 bytes + n bytes
