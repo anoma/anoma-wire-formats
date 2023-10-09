@@ -1,4 +1,4 @@
-;; basic types (u256, byte, length) are defined in common.bnf
+;; for basic types (u256, byte, length) see common.bnf
 
 ;; all fields without _cmtmnt are non-lossy encodings of a pre-image into a finite field
 ;; logic_cmtmnt and value_cmtmnt are commitments to program-field-elements (see data-storage.bnf)
