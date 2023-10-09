@@ -1,0 +1,18 @@
+transparent-partial-transaction ::= <input-resources> <output-resources> <term> <proofs> <extra-data> <delta>
+
+input-resources ::= <set-size> <transparent-resource>*
+output-resources ::= <set-size> <transparent-resource>*
+
+executable_cmtmnt ::= <finite-field-element> ;; see data-storage.bnf
+proof ::= <flag> <finite-field-element> ;; Can be either a succinct proof, or a key to look up the proof from storage.
+
+;; flag denotes which type of proof system is used and wether a lookup should be performed. 
+;; Should be provided as an argument to the resource logic for validation. Needs to be canonical.
+flag ::= <byte>
+
+extra-data ::= <bytestring-map> ;; see data-storage.bnf
+
+delta ::= <set-size> <ffepair>* ;; if delta is all zeros, i.e. balanced, it is a transaction
+ffe-pair ::= <finite-field-element> <finite-field-element>
+
+set-size = <length> ;; see common.bnf

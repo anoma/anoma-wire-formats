@@ -1,5 +1,6 @@
 ;; 32 bytes + n bytes
 proof ::= <length> <byte>*
+bytestring ::= <length> <byte>*
 
 pallas ::= <u256>
 
